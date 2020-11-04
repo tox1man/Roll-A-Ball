@@ -6,6 +6,9 @@ namespace RollABall
 {
     public sealed class Buff : Bonus, IFlayable, IFlickerable
     {
+        private EventHandler<CaughtPlayerEventArgs> _buffCollision;
+        public EventHandler<CaughtPlayerEventArgs> BuffCollision;
+
         private float _bonusSpeedPenalty = 30f;
 
         private void Awake()
@@ -24,6 +27,8 @@ namespace RollABall
         protected override void Interact()
         {
             base.SpeedPlayerUp();
+
+
 
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;

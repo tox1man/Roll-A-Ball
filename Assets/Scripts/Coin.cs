@@ -1,22 +1,26 @@
 ﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace RollABall
 {
-    public sealed class Coin : InteractiveObject, IRotatable, IFlickerable
+    public sealed class Coin : Bonus, IRotatable, IFlickerable
     {
         protected override void Interact()
         {
-
+            DisableRender();
+            Debug.Log("Coin");
+            DestroyBonus();
         }
 
-        public void Rotate()
+        private void Awake()
         {
-
+            _flayRange = Random.Range(0.5f, 2.5f);
         }
 
-        public void Flicker()
+        public new void Rotate()
         {
-
+            transform.Rotate(Vector3.forward);
         }
     }
 }

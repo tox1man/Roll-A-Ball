@@ -8,9 +8,16 @@ namespace RollABall
     {
         private float _slowTrapSpeedPenalty = 30f;
 
+        private event EventHandler<CaughtPlayerEventArgs> _trapCollision;
+        public event EventHandler<CaughtPlayerEventArgs> TrapCollision
+        {
+            add { _trapCollision += value; }
+            remove { _trapCollision -= value; }
+        }
+
         private void Awake()
         {
-            _flayRange = Random.Range(1.0f, 3.0f);
+            _flayRange = Random.Range(1.0f,  3.0f);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -24,9 +31,9 @@ namespace RollABall
         protected override void Interact()
         {
             SlowPlayerDown();
+            DisableRender();
 
-            gameObject.GetComponent<Renderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
+            _trapCollision?.Invoke(this, new CaughtPlayerEventArgs(new Color(255,255,255)));
 
             Invoke(nameof(SpeedPlayerUp), 5f);
             Invoke(nameof(base.DestroyBonus), 5.01f);

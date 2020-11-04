@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-namespace RollABall
+﻿namespace RollABall
 {
     public sealed class PlayerBall : Player
     {
