@@ -3,19 +3,23 @@ using UnityEngine;
 
 namespace RollABall
 {
-    public sealed class CameraController : MonoBehaviour
+    public sealed class CameraController : IExecute
     {
-        public Player Player;
+        private Transform _playerTransform;
+        private Transform _cameraTransform;
         private Vector3 _offset;
 
-        private void Start()
+        public CameraController(Transform player, Transform camera)
         {
-            _offset = transform.position - Player.transform.position;    
+            _playerTransform = player;
+            _cameraTransform = camera;
+            _cameraTransform.LookAt(_playerTransform);
+            _offset = _cameraTransform.position - _playerTransform.transform.position;    
         }
 
-        private void LateUpdate()
+        public void Execute()
         {
-            transform.position = Player.transform.position + _offset;
+            _cameraTransform.position = _playerTransform.transform.position + _offset;
         }
     }
 }

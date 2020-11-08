@@ -27,12 +27,6 @@ namespace RollABall
             Destroy(gameObject);
         }
 
-        protected void DisableRender()
-        {
-            gameObject.GetComponent<Renderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
-        }
-
         public void Flay()
         {
             transform.localPosition = new Vector3(transform.localPosition.x, 

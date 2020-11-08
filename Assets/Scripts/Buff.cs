@@ -16,25 +16,18 @@ namespace RollABall
             _flayRange = Random.Range(1.0f, 5.0f);
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                Interact();
-            }
-        }
-
         protected override void Interact()
         {
             base.SpeedPlayerUp();
 
-
-
-            gameObject.GetComponent<Renderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
-
             Invoke(nameof(SlowPlayerDown), 10f);
             Invoke(nameof(base.DestroyBonus), 10.01f);
+        }
+
+        public override void Execute()
+        {
+            Flay();
+            Flicker();
         }
 
     }

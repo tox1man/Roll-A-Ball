@@ -20,19 +20,15 @@ namespace RollABall
             _flayRange = Random.Range(1.0f,  3.0f);
         }
 
-        private void OnTriggerEnter(Collider other)
+        public override void Execute()
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                Interact();
-            }
+            Rotate();
+            Flay();
         }
 
         protected override void Interact()
         {
             SlowPlayerDown();
-            DisableRender();
-
             _trapCollision?.Invoke(this, new CaughtPlayerEventArgs(new Color(255,255,255)));
 
             Invoke(nameof(SpeedPlayerUp), 5f);

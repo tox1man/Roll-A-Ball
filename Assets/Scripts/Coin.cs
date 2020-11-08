@@ -8,9 +8,14 @@ namespace RollABall
     {
         protected override void Interact()
         {
-            DisableRender();
             Debug.Log("Coin");
             DestroyBonus();
+        }
+
+        public override void Execute()
+        {
+            Rotate();
+            Flicker();
         }
 
         private void Awake()

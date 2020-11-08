@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 
 
@@ -7,14 +6,27 @@ namespace RollABall
 {
     public class GameController : MonoBehaviour
     {
-        public int _score = 0;
         private InteractiveObject[] _interactiveObjects;
+
+        private DisplayEndGame _displayEndGame;
+        private DisplayScore _displayScore;
+        private InputController _inputController;
+        private CameraController _cameraController;
+        private Reference _reference;
         private Coin[] _coins;
+
+        public int _score = 0;
 
 
         private void Awake()
         {
             _interactiveObjects = FindObjectsOfType<InteractiveObject>();
+            _reference = new Reference();
+            _displayEndGame = new DisplayEndGame();
+            _displayScore = new DisplayScore();
+            _inputController = new InputController();
+            _cameraController = new CameraController(_reference.PlayerBall.transform, _reference.MainCamera.transform);
+
             _coins = FindObjectsOfType<Coin>();
 
             foreach (var o in _interactiveObjects)
@@ -42,20 +54,10 @@ namespace RollABall
                 {
                     continue;
                 }
-
-                if(interactiveObject is IFlayable FlayableObject)
+                
+                if (interactiveObject is IExecute ExecutableObject)
                 {
-                    FlayableObject.Flay();
-                }
-
-                if(interactiveObject is IRotatable RotatableObject)
-                {
-                    RotatableObject.Rotate();
-                }
-
-                if(interactiveObject is IFlickerable FlickerableObject)
-                {
-                    FlickerableObject.Flicker();
+                    ExecutableObject.Execute();
                 }
             }
         }
