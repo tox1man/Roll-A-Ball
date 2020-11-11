@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace RollABall
 {
-    public sealed class CaughtPlayerEventArgs
+    public sealed class GotTrapEventArgs
     {
         public Color Color { get; }
-        public CaughtPlayerEventArgs(Color Color)
+        public GotTrapEventArgs(Color Color)
         {
             this.Color = Color;
         }

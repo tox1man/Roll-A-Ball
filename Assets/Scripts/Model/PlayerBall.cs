@@ -14,7 +14,7 @@ namespace RollABall
 
         public override void Move(float x, float y, float z)
         {
-            _playerRigidbody.velocity = new Vector3(x, y, z) * speed;
+            _playerRigidbody.velocity = new Vector3(x, y, z).normalized * speed;
         }
     }
 }

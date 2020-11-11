@@ -15,8 +15,8 @@ namespace RollABall
             {
                 if (_playerBall == null)
                 {
-                    var gameObject = Resources.Load<PlayerBall>("/Prefabs/Player");
-                    _playerBall = gameObject;
+                    var playerObject = Resources.Load<PlayerBall>("Prefabs/Player");
+                    _playerBall = GameObject.Instantiate(playerObject);
                 }
                 return _playerBall;
             }
@@ -28,7 +28,6 @@ namespace RollABall
             {
                 if (_mainCamera == null)
                 {
-                    var gameObject = Resources.Load<Camera>("/Prefabs/MainCamera");
                     _mainCamera = Camera.main;
                 }
                 return _mainCamera;
