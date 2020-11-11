@@ -63,27 +63,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bonus.cs" />
-    <Compile Include="Assets\Scripts\Buff.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CaughtPlayerEventArgs.cs" />
-    <Compile Include="Assets\Scripts\Coin.cs" />
-    <Compile Include="Assets\Scripts\DisplayEndGame.cs" />
-    <Compile Include="Assets\Scripts\DisplayScore.cs" />
-    <Compile Include="Assets\Scripts\GUIManager.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\IAction.cs" />
-    <Compile Include="Assets\Scripts\IExecute.cs" />
-    <Compile Include="Assets\Scripts\IFlayable.cs" />
-    <Compile Include="Assets\Scripts\IFlickerable.cs" />
-    <Compile Include="Assets\Scripts\IInteracltable.cs" />
-    <Compile Include="Assets\Scripts\IRotatable.cs" />
-    <Compile Include="Assets\Scripts\InputController.cs" />
-    <Compile Include="Assets\Scripts\InteractiveObject.cs" />
-    <Compile Include="Assets\Scripts\PlayerBall.cs" />
-    <Compile Include="Assets\Scripts\PlayerBase.cs" />
-    <Compile Include="Assets\Scripts\Reference.cs" />
-    <Compile Include="Assets\Scripts\Trap.cs" />
+    <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\GameController.cs" />
+    <Compile Include="Assets\Scripts\Controllers\GotBuffEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Controllers\InputController.cs" />
+    <Compile Include="Assets\Scripts\EventArgs\GotCoinEventArgs.cs" />
+    <Compile Include="Assets\Scripts\EventArgs\GotTrapEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IAction.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IExecute.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IFlayable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IFlickerable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IInteracltable.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IRotatable.cs" />
+    <Compile Include="Assets\Scripts\Model\Bonus.cs" />
+    <Compile Include="Assets\Scripts\Model\Buff.cs" />
+    <Compile Include="Assets\Scripts\Model\Coin.cs" />
+    <Compile Include="Assets\Scripts\Model\InteractiveObject.cs" />
+    <Compile Include="Assets\Scripts\Model\ListExecuteObjects.cs" />
+    <Compile Include="Assets\Scripts\Model\PlayerBall.cs" />
+    <Compile Include="Assets\Scripts\Model\PlayerBase.cs" />
+    <Compile Include="Assets\Scripts\Model\Reference.cs" />
+    <Compile Include="Assets\Scripts\Model\Trap.cs" />
+    <Compile Include="Assets\Scripts\View\DisplayEndGame.cs" />
+    <Compile Include="Assets\Scripts\View\DisplayScore.cs" />
+    <Compile Include="Assets\Scripts\View\GUIManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>A:/GeekBrains gamedev/unity git/Roll-A-Ball/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
