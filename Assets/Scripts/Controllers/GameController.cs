@@ -66,7 +66,7 @@ namespace RollABall
         private void OnBuffPickUp(object value, GotBuffEventArgs buffArgs)
         {
             _player.SpeedPlayerUp();
-            Debug.Log($"Speed buff");
+            Debug.Log("Speed buff");
         }
 
         private void Update()

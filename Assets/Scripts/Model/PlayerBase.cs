@@ -6,6 +6,8 @@ namespace RollABall
     public abstract class PlayerBase : MonoBehaviour
     {
         public int speed { get; set; }
+        public bool isBuffed = false;
+        public bool isDebuffed = false;
 
         public PlayerBase()
         {
@@ -18,12 +20,34 @@ namespace RollABall
         }
         public void SlowPlayerDown()
         {
-            speed /= 2;
+            if(!isDebuffed)
+            {
+                speed /= 2;
+            }
+            if (!isBuffed)
+            {
+                isDebuffed = true;
+            }
+            else
+            {
+                isBuffed = false;
+            }
         }
 
         public void SpeedPlayerUp()
         {
-            speed *= 2;
+            if (!isBuffed)
+            {
+                speed *= 2;
+            }
+            if (!isDebuffed)
+            {
+                isBuffed = true;
+            }
+            else
+            {
+                isDebuffed = false;
+            }
         }
 
         public abstract void Move(float x, float y, float z);
