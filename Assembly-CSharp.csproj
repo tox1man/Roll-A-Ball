@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\EventArgs\GotCoinEventArgs.cs" />
     <Compile Include="Assets\Scripts\EventArgs\GotTrapEventArgs.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IAction.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IData.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IExecute.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IFlayable.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IFlickerable.cs" />
@@ -84,9 +85,11 @@
     <Compile Include="Assets\Scripts\Model\PlayerBase.cs" />
     <Compile Include="Assets\Scripts\Model\Reference.cs" />
     <Compile Include="Assets\Scripts\Model\Trap.cs" />
+    <Compile Include="Assets\Scripts\SavedData.cs" />
     <Compile Include="Assets\Scripts\View\DisplayEndGame.cs" />
     <Compile Include="Assets\Scripts\View\DisplayScore.cs" />
     <Compile Include="Assets\Scripts\View\GUIManager.cs" />
+    <Compile Include="Assets\Scripts\XMLData.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>A:/GeekBrains gamedev/unity git/Roll-A-Ball/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
