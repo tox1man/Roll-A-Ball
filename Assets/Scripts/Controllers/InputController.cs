@@ -29,6 +29,11 @@ namespace RollABall
                 _xmlData.Save(_savedData, _xmlData._savePath);
                 Debug.Log("Call:" + _xmlData._savePath);
             }
+            if(Input.GetKeyDown(_loadKey))
+            {
+                _xmlData.Load(_savedData, _xmlData._savePath);
+                Debug.Log("Call:" + _xmlData._savePath);
+            }
         }   
     }
 }

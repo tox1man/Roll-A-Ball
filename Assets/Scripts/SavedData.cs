@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RollABall
@@ -15,7 +13,6 @@ namespace RollABall
         public SavedData()
         {
             _coinsList = GameObject.FindObjectsOfType<Coin>();
-            Debug.Log(_coinsList.Length);
             _buffsList = GameObject.FindObjectsOfType<Buff>();
             _trapsList = GameObject.FindObjectsOfType<Trap>();
         }
